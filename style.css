@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --star-gold: #fbbf24;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+.feedback-container {
+    max-width: 700px;
+    margin: 20px auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+header { text-align: center; margin-bottom: 35px; }
+header h2 { font-size: 2rem; color: var(--primary); margin: 0; }
+header p { color: var(--text-muted); font-size: 0.95rem; }
+
+.form-section {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.form-section h3 {
+    margin-top: 0;
+    color: var(--primary);
+    font-size: 1.1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group { margin-bottom: 22px; }
+label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+
+.semester-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.tile { cursor: pointer; position: relative; }
+.tile input { position: absolute; opacity: 0; }
+.tile span {
+    display: block; background: #fff; border: 2px solid #e2e8f0;
+    padding: 10px; text-align: center; border-radius: 8px; font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.tile input:checked + span {
+    border-color: var(--primary); background: #eef2ff; color: var(--primary);
+}
+
+.radio-tile-group { display: flex; gap: 10px; }
+
+/* Star Rating Fix */
+.star-rating { 
+    display: flex; 
+    flex-direction: row-reverse; 
+    justify-content: flex-end; 
+}
+.star-rating input { display: none; }
+.star-rating label { font-size: 2rem; color: #d1d5db; cursor: pointer; padding: 0 2px; }
+
+/* Specific star logic to prevent cross-selection highlighting */
+.star-rating input:checked ~ label, 
+.star-rating label:hover, 
+.star-rating label:hover ~ label {
+    color: var(--star-gold);
+}
+
+.radio-group-horizontal { display: flex; gap: 15px; flex-wrap: wrap; }
+.radio-group-horizontal label { font-weight: 400; cursor: pointer; display: flex; align-items: center; gap: 5px;}
+
+input[type="text"], input[type="email"], select, textarea {
+    width: 100%; padding: 12px 15px; border: 2px solid #e2e8f0; border-radius: 10px;
+    font-family: inherit; font-size: 1rem; box-sizing: border-box;
+}
+
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+
+.submit-btn {
+    width: 100%; background: var(--primary); color: #fff; border: none; padding: 18px;
+    border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+.submit-btn:hover { background: #4338ca; transform: translateY(-2px); }
+
+.hidden { display: none !important; }
+
+#successMessage { text-align: center; padding: 50px 0; }
+#successMessage i { font-size: 5rem; color: #10b981; margin-bottom: 20px; }
+.reload-btn { margin-top: 20px; background: #e2e8f0; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600;}
+
+@media (max-width: 500px) {
+    .semester-grid { grid-template-columns: repeat(2, 1fr); }
+}

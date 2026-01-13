@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Feedback Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="feedback-container animate-pop-in">
+        <header>
+            <h2>Student Feedback Portal</h2>
+            <p>Please provide your honest feedback for the selected subject.</p>
+        </header>
+
+        <form id="universalFeedbackForm">
+            <div class="form-section">
+                <h3>🔹 A. General Information</h3>
+                
+                <div class="form-group">
+                    <label for="studentName">Student Full Name</label>
+                    <input type="text" id="studentName" name="student_name" placeholder="e.g. John Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Student Email Address</label>
+                    <input type="email" id="studentEmail" name="student_email" placeholder="john.doe@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjectName">1. Course Name</label>
+                    <input type="text" id="subjectName" name="subject_name" placeholder="Enter the subject title" required>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Semester</label>
+                    <div class="semester-grid">
+                        <label class="tile"><input type="radio" name="semester" value="Sem 1" required><span>1</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 2"><span>2</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 3"><span>3</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 4"><span>4</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 5"><span>5</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 6"><span>6</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 7"><span>7</span></label>
+                        <label class="tile"><input type="radio" name="semester" value="Sem 8"><span>8</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🔹 B. Subject Understanding</h3>
+                <div class="form-group">
+                    <label>3. How clear is your understanding of the subject concepts?</label>
+                    <div class="star-rating">
+                        <input type="radio" id="q3-5" name="q3_understanding" value="5"><label for="q3-5">★</label>
+                        <input type="radio" id="q3-4" name="q3_understanding" value="4"><label for="q3-4">★</label>
+                        <input type="radio" id="q3-3" name="q3_understanding" value="3"><label for="q3-3">★</label>
+                        <input type="radio" id="q3-2" name="q3_understanding" value="2"><label for="q3-2">★</label>
+                        <input type="radio" id="q3-1" name="q3_understanding" value="1"><label for="q3-1">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>4. Are the topics explained in a structured manner?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q4_structured" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q4_structured" value="No"> No</label>
+                        <label><input type="radio" name="q4_structured" value="Partially"> Partially</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>5. How difficult do you find this subject?</label>
+                    <div class="radio-tile-group">
+                        <label class="tile"><input type="radio" name="q5_difficulty" value="Easy"><span>Easy</span></label>
+                        <label class="tile"><input type="radio" name="q5_difficulty" value="Moderate"><span>Mod</span></label>
+                        <label class="tile"><input type="radio" name="q5_difficulty" value="Difficult"><span>Diff</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🔹 C. Teaching & Content</h3>
+                <div class="form-group">
+                    <label>6. How would you rate the teaching methodology?</label>
+                    <div class="star-rating">
+                        <input type="radio" id="q6-5" name="q6_teaching" value="5"><label for="q6-5">★</label>
+                        <input type="radio" id="q6-4" name="q6_teaching" value="4"><label for="q6-4">★</label>
+                        <input type="radio" id="q6-3" name="q6_teaching" value="3"><label for="q6-3">★</label>
+                        <input type="radio" id="q6-2" name="q6_teaching" value="2"><label for="q6-2">★</label>
+                        <input type="radio" id="q6-1" name="q6_teaching" value="1"><label for="q6-1">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>7. Are real-world applications explained?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q7_realworld" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q7_realworld" value="Sometimes"> Sometimes</label>
+                        <label><input type="radio" name="q7_realworld" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>8. Are numerical problems and examples helpful?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q8_numerical" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q8_numerical" value="No"> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🔹 D. Practical & Lab Relevance</h3>
+                <div class="form-group">
+                    <label>9. Are lab sessions helpful in understanding theory?</label>
+                    <select name="q9_lab" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Very Helpful">Very Helpful</option>
+                        <option value="Helpful">Helpful</option>
+                        <option value="Not Helpful">Not Helpful</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>10. Is there a good balance between theory and practicals?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q10_balance" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q10_balance" value="No"> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🔹 E. Learning Resources</h3>
+                <div class="form-group">
+                    <label>11. Are notes, PPTs or reference materials sufficient?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q11_materials" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q11_materials" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>12. Are advanced topics explained clearly?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q12_advanced" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q12_advanced" value="Partially"> Partially</label>
+                        <label><input type="radio" name="q12_advanced" value="No"> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>🔹 F. Overall Feedback</h3>
+                <div class="form-group">
+                    <label>13. How satisfied are you with this subject?</label>
+                    <div class="star-rating">
+                        <input type="radio" id="q13-5" name="q13_overall" value="5"><label for="q13-5">★</label>
+                        <input type="radio" id="q13-4" name="q13_overall" value="4"><label for="q13-4">★</label>
+                        <input type="radio" id="q13-3" name="q13_overall" value="3"><label for="q13-3">★</label>
+                        <input type="radio" id="q13-2" name="q13_overall" value="2"><label for="q13-2">★</label>
+                        <input type="radio" id="q13-1" name="q13_overall" value="1"><label for="q13-1">★</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>14. Would you recommend improvements in teaching approach?</label>
+                    <div class="radio-group-horizontal">
+                        <label><input type="radio" name="q14_improvements" value="Yes"> Yes</label>
+                        <label><input type="radio" name="q14_improvements" value="No"> No</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>15. Any suggestions or comments?</label>
+                    <textarea name="q15_comments" rows="3" placeholder="Share your thoughts..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Feedback <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+
+        <div id="successMessage" class="hidden">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Form Submitted!</h3>
+            <p>Thank you for your contribution to improving our education quality.</p>
+            <button onclick="location.reload()" class="reload-btn">Fill another form</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
